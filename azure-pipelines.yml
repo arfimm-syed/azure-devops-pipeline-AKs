@@ -33,15 +33,6 @@ steps:
     terraform init
   displayName: Terraform Init
 
-- task: TerraformCLI@2
-  inputs:
-    command: 'apply'
-    workingDirectory: '$(System.DefaultWorkingDirectory)azure-devops-pipeline-AKs'
-    environmentServiceName: 'Kubernetes-Docker-pipeliens'
-    providerAzureRmSubscriptionId: 'c8981bbe-3eda-4ec3-8066-620482a1a9fc'
-    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var tenant_id=$(tenant_id))'
-    allowTelemetryCollection: true
-    
 # Terraform Apply
 - script: |
     terraform apply -auto-approve
