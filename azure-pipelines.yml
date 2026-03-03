@@ -19,18 +19,13 @@ steps:
 #   displayName: Install Terraform
 
 # Azure Login using Service Principal
-- script: |
-    echo "Logging into Azure using Service Principal..."
-
-    az login --service-principal \
-      --username $(client_id) \
-      --password $(client_secret) \
-      --tenant $(tenant_id)
-
-    az account set --subscription $(subscription_id)
-
-    echo "Azure Login Successful"
-  displayName: Azure SP Login
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'azure-subs-terra'
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az account show
 
 # # Terraform Init
 # - script: |
