@@ -19,20 +19,24 @@ steps:
   displayName: Install Terraform
 
 # Azure Login using Service Principal
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'azure-subs-terra'
-    scriptType: bash
-    scriptLocation: inlineScript
-    inlineScript: |
-      az account show
+- bash:
+    echo $clientID
 
-# Terraform Init
-- script: |
-    terraform init
-  displayName: Terraform Init
 
-# Terraform Apply
-- script: |
-    terraform apply -auto-approve
-  displayName: Terraform Apply
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'azure-subs-terra'
+#     scriptType: bash
+#     scriptLocation: inlineScript
+#     inlineScript: |
+#       az account show
+
+# # Terraform Init
+# - script: |
+#     terraform init
+#   displayName: Terraform Init
+
+# # Terraform Apply
+# - script: |
+#     terraform apply -auto-approve
+#   displayName: Terraform Apply
