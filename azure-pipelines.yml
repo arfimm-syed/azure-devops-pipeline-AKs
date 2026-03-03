@@ -19,7 +19,7 @@ steps:
   displayName: Install Terraform
 
 # Azure Login using Service Principal
-- bash:
+- script: |
     az login --service-principal \
         -u $(clientID) \
         -p $(clientsecret) \
