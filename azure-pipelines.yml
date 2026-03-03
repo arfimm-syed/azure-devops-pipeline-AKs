@@ -20,7 +20,11 @@ steps:
 
 # Azure Login using Service Principal
 - bash:
-    echo $(clientID) "$clientID"
+    az login --service-principal \
+        -u $(clientID) \
+        -p $(clientsecret) \
+        --tenant $(tanantID)
+     
 # - task: AzureCLI@2
 #   inputs:
 #     azureSubscription: 'azure-subs-terra'
