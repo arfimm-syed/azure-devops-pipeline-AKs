@@ -36,8 +36,28 @@ stages:
           checkov -d terraform
       displayName: 'Security Scan'
 
+- stage: Plan
+  isplayName: Terraform 'Plan'
+  dependsOn: Validate
+  jobs:
+  - job: Plan
+    steps:
+    - checkout: self
 
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@1
+      inputs:
+        terraformVersion: '1.14.3'
 
+    - task: TerraformCLI@1
+      displayName: 'Init'
+      inputs:
+        command: 'init'
+        backendType: 'azurerm'
+        backendServiceArm: 'azure-subs-terra'
+        backendAzureRmResourceGroupName: 'terraform-rg'
+        backendAzureRmStorageAccountName: 'mystoragesyedshah'
+        backendAzureRmContainerName: 'tfstate'
+        backendAzureRmKey: 'afzal.tfstate'
 
 
 
