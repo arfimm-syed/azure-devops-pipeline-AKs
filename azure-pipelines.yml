@@ -19,7 +19,7 @@ stages:
       inputs:
         terraformVersion: '1.14.3'
 
-    - scripts: | 
+    - script: | 
         pwd 
         ls -ltr
       displayName: 'Checking files'
