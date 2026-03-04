@@ -15,7 +15,7 @@ stages:
     steps:
     - checkout: self
 
-    - task: TerraformInstaller@1
+    - task: Job Validate: Step task reference is invalid. The task name TerraformInstaller is ambiguous. Specify one of the following identifiers to resolve the ambiguity: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller, ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller
       inputs:
         terraformVersion: '1.14.3'
 
