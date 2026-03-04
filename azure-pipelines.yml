@@ -19,14 +19,21 @@ stages:
       inputs:
         terraformVersion: '1.14.3'
 
-    - script: | 
-        pwd 
-        ls -ltr
-      displayName: 'Checking files'
-
-    - task: Checkov@1
+    - task: Bash@3
       inputs:
-        framework: terraform
+        targetType: inline
+        script: |
+          pwd 
+          ls -ltr
+          python3- -m pip install --upgrade pip
+          pip3 install checkov
+      displayName: 'Installing Checkov'
+
+    - task: Bash@3
+      inputs:
+        targetType: inline
+        script: |
+          checkov -d terraform
       displayName: 'Security Scan'
 
 
