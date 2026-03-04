@@ -59,11 +59,17 @@ stages:
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'afzal.tfstate'
 
-    - task: TerraformCLI@1
-      displayName: 'Terraform Plan'
+    - task: TerraformTaskV4@4
       inputs:
+        provider: 'azurerm'
         command: 'plan'
         environmentServiceNameAzureRM: 'azure-subs-terra'
+
+    # - task: TerraformCLI@1
+    #   displayName: 'Terraform Plan'
+    #   inputs:
+    #     command: 'plan'
+    #     environmentServiceNameAzureRM: 'azure-subs-terra'
 
 
 
