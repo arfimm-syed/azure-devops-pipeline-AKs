@@ -19,6 +19,16 @@ stages:
       inputs:
         terraformVersion: '1.14.3'
 
+    - scripts: | 
+        pwd 
+        ls -ltr
+      displayName: 'Checking files'
+
+    - task: Checkov@1
+      inputs:
+        framework: terraform
+      displayName: 'Security Scan'
+
 
 
 
