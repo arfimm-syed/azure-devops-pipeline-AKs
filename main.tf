@@ -9,8 +9,9 @@ resource "azurerm_resource_group" "rg" {
 }
 
 terraform {
-│   backend "azurerm" {}
-│ }
+  backend "azurerm" {}
+
+  }
 
 
 
