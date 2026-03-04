@@ -8,6 +8,10 @@ resource "azurerm_resource_group" "rg" {
   location = "UK South"
 }
 
+terraform {
+│   backend "local" {}
+│ }
+
 
 
 resource "azurerm_storage_account" "sa" {
