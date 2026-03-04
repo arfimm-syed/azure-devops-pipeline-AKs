@@ -62,9 +62,9 @@ stages:
     - task: TerraformCLI@1
       displayName: 'Terraform Plan'
       inputs:
-        command: 'plan
+        command: 'plan'
         environmentServiceNameAzureRM: 'azure-subs-terra'
-        
+
 
 
 
