@@ -15,9 +15,9 @@ stages:
     steps:
     - checkout: self
 
-  - task: TerraformInstaller@1
-    inputs:
-      terraformVersion: '1.14.3'
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: '1.14.3'
 
 
 
