@@ -8,12 +8,6 @@ resource "azurerm_resource_group" "rg" {
   location = "UK South"
 }
 
-terraform {
-  backend "azurerm" {}
-
-  }
-
-
 
 
 resource "azurerm_storage_account" "sa" {
@@ -27,19 +21,3 @@ resource "azurerm_storage_account" "sa" {
     environment = "staging"
   }
 }
-#resource "azurerm_kubernetes_cluster" "aks" {
- # name                = "aks-dev-cluster"
- # location            = azurerm_resource_group.rg.location
- # resource_group_name = azurerm_resource_group.rg.name
- # dns_prefix          = "aksdns"
-
- # default_node_pool {
- #   name       = "agentpool"
- #   node_count = 1
-  #  vm_size    = "Standard_B2ms"
-  #}
-
- # identity {
-  #  type = "SystemAssigned"
-  #}
-#}
