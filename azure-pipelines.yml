@@ -37,7 +37,7 @@ stages:
       displayName: 'Security Scan'
 
 - stage: Plan
-  isplayName: Terraform 'Plan'
+  displayName: Terraform 'Plan'
   dependsOn: Validate
   jobs:
   - job: Plan
